@@ -82,10 +82,12 @@ http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
 
 /* =Reset
 -------------------------------------------------------------- */
+/*
 * {
     font-family: Microsoft YaHei;
 }
-Microsoft YaHei,html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -241,7 +243,7 @@ input,
 textarea {
 	border: 1px solid rgb(162, 230, 247);
 	border-radius: 3px;
-	font-family: Microsoft YaHei,  inherit;
+	font-family: inherit;
 	padding: 6px;
 	padding: 0.428571429rem;
 }
@@ -568,12 +570,12 @@ html {
 body {
 	font-size: 14px;
 	font-size: 1rem;
-	font-family: Microsoft YaHei,  Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: rgb(0, 0, 0); /*Article & Widget Content*/
 }
 body.custom-font-enabled {
-	font-family: Microsoft YaHei,  Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	/*All Fonts*/
 }
 a {
@@ -765,7 +767,6 @@ section[role="banner"] {
 	color: rgb(81, 165, 168); /* Widget Link Hover*/
 }
 
-}
 .widget-area #s {
 	width: 70.66666666666%; /* define a width to avoid dropping a wider submit button */
 }
@@ -1002,7 +1003,7 @@ article.sticky .featured-post {
 }
 .entry-content code,
 .comment-content code {
-    font-family: Consolas, Monaco, Lucida Console, monospace;
+    font-family: "Source Code Pro", Consolas, Monaco, Lucida Console, monospace;
     padding: 0 5px;
     margin: 0 2px;
     font-size: 0.9em;
@@ -1013,7 +1014,7 @@ article.sticky .featured-post {
 .entry-content pre,
 .comment-content pre {
     border: 1px solid rgba(0, 0, 0, 0.24);
-    font-family: Consolas, Monaco, Lucida Console, monospace;
+    font-family: "Source Code Pro", Consolas, Monaco, Lucida Console, monospace;
     margin-bottom: 15px;
     overflow: auto;
     padding: 7px 15px;
@@ -1142,7 +1143,7 @@ footer.entry-meta {
 }
 
 /* Hexo Code */
-figure.highlight {
+/*figure.highlight {
     border: 1px solid rgba(0, 0, 0, 0.24);
     margin-bottom: 15px;
     padding: 7px 15px;
@@ -1188,8 +1189,8 @@ figure.highlight pre {
 
 figure.highlight .line {
     height: 20px;
-    font-family: Consolas, Monaco, Lucida Console, monospace;
-}
+    font-family: "Source Code Pro", Consolas, Monaco, Lucida Console, monospace;
+}*/
 
 
 
@@ -1968,4 +1969,194 @@ img#wpstats {
 		margin-left: 50px;
 		margin-left: 3.57142857rem;
 	}
+}
+
+/* added */
+
+.article-entry pre,
+.article-entry .highlight {
+  background: #2d2d2d;
+  margin: 0 -20px;
+  padding: 15px 20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  overflow: auto;
+  color: #ccc;
+  line-height: 22.400000000000002px;
+}
+.article-entry .highlight .gutter pre,
+.article-entry .gist .gist-file .gist-data .line-numbers {
+  color: #666;
+  font-size: 0.85em;
+}
+.article-entry pre,
+.article-entry code {
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+}
+.article-entry code {
+  background: #eee;
+  text-shadow: 0 1px #fff;
+  padding: 0 0.3em;
+}
+.article-entry pre code {
+  background: none;
+  text-shadow: none;
+  padding: 0;
+}
+.article-entry .highlight pre {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.article-entry .highlight table {
+  margin: 0;
+  width: auto;
+}
+.article-entry .highlight td {
+  border: none;
+  padding: 0;
+}
+.article-entry .highlight figcaption {
+  font-size: 0.85em;
+  color: #999;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+.article-entry .highlight figcaption:before,
+.article-entry .highlight figcaption:after {
+  content: "";
+  display: table;
+}
+.article-entry .highlight figcaption:after {
+  clear: both;
+}
+.article-entry .highlight figcaption a {
+  float: right;
+}
+.article-entry .highlight .gutter pre {
+  text-align: right;
+  padding-right: 20px;
+}
+.article-entry .highlight .line {
+  height: 22.400000000000002px;
+}
+.article-entry .highlight .line.marked {
+  background: #515151;
+}
+.article-entry .gist {
+  margin: 0 -20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  background: #2d2d2d;
+  padding: 15px 20px 15px 0;
+}
+.article-entry .gist .gist-file {
+  border: none;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  margin: 0;
+}
+.article-entry .gist .gist-file .gist-data {
+  background: none;
+  border: none;
+}
+.article-entry .gist .gist-file .gist-data .line-numbers {
+  background: none;
+  border: none;
+  padding: 0 20px 0 0;
+}
+.article-entry .gist .gist-file .gist-data .line-data {
+  padding: 0 !important;
+}
+.article-entry .gist .gist-file .highlight {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.article-entry .gist .gist-file .gist-meta {
+  background: #2d2d2d;
+  color: #999;
+  font: 0.85em "Helvetica Neue", 'Roboto', Helvetica, Arial, sans-serif;
+  text-shadow: 0 0;
+  padding: 0;
+  margin-top: 1em;
+  margin-left: 20px;
+}
+.article-entry .gist .gist-file .gist-meta a {
+  color: #258fb8;
+  font-weight: normal;
+}
+.article-entry .gist .gist-file .gist-meta a:hover {
+  text-decoration: underline;
+}
+
+/* */
+
+pre .comment,
+pre .title {
+  color: #999;
+}
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #f2777a;
+}
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #f99157;
+}
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+  color: #9c9;
+}
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #9c9;
+}
+pre .css .hexcolor {
+  color: #6cc;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #69c;
+}
+pre .keyword,
+pre .javascript .function {
+  color: #c9c;
+}
+
+/* mine */
+.gutter {
+  width: 2%; padding: 6px 4px 6px 0px; margin-top: 5px;
+}
+.gutter > pre {
+  padding: 7px 5px;
+}
+.entry-content td, .comment-content td {
+  border: 0px none;
 }
