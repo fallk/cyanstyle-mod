@@ -11,6 +11,7 @@ reply: Reply
 share: Share
 fancybox: true
 subtitle: Have a seat, right over there.
+do_share: false
 
 # Sidebar
 widgets:
