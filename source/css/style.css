@@ -2161,7 +2161,7 @@ pre .javascript .function {
   border: 0px none;
 }
 #s { /* search button */
-  width: auto;
+  width: auto !important;
 }
 .highlight > table {
   border-bottom: medium none;
