@@ -1,5 +1,5 @@
-<a href="<%- url_for(post.path) %>">
+Posted at <a href="<%- url_for(post.path) %>">
     <time datetime="<%= date_xml(post.date) %>" class="entry-date">
         <%= date(post.date, date_format) %>
     </time>
-</a>
+</a>.
