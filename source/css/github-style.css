@@ -120,3 +120,7 @@ body {
 	padding: 0px;
 	border: medium none;
 }
+
+.header-anchor {
+	opacity: 0;
+}
