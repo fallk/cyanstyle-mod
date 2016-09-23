@@ -52,10 +52,13 @@
   <% } %>
   <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
   <% if (page.useGithubLayout) { %>
-  <%- css('css/github-markdown.css') %>
-  <%- css('css/github-style.css') %>
+    <%- css('css/github-markdown.css') %>
+    <%- css('css/github-style.css') %>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <%- css('css/spoilers.css') %>
+    <%- partial('spoiler-js') %>
   <% } else { %>
-  <%- css('css/style') %>
+    <%- css('css/style') %>
   <% } %>
   <%- partial('google-analytics') %>
   
