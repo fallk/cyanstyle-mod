@@ -51,11 +51,17 @@
     <link rel="icon" href="<%- config.root %>css/images/favicon.ico">
   <% } %>
   <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <% if (page.useGithubLayout) { %>
+  <%- css('css/github-markdown.css') %>
+  <%- css('css/github-style.css') %>
+  <% } else { %>
   <%- css('css/style') %>
+  <% } %>
   <%- partial('google-analytics') %>
   
   <!-- baidu webmaster push -->
   <!-- tracking
   <script src='//push.zhanzhang.baidu.com/push.js'></script>
   -->
+
 </head>
