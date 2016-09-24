@@ -39,7 +39,7 @@
     title = 'Tag: ' + page.tag;
   }
   %>
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <title><% if (page.altTitle) { %><%= config.title %><% } else if (title) { %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
@@ -54,7 +54,7 @@
   <% if (page.useGithubLayout) { %>
     <%- css('css/github-markdown.css') %>
     <%- css('css/github-style.css') %>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <%- css('css/spoilers.css') %>
     <%- partial('spoiler-js') %>
   <% } else { %>
