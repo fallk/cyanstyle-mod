@@ -3,35 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <% 
-  function stripTags(str) {
-    return str.
-
-    replace(/<br>/g, '\n'). // replace newlines
-    replace(/<br\/>/g, '\n'). // replace newlines
-    replace(/<br \/>/g, '\n'). // replace newlines
-    replace(/<\/br>/g, ''). // not \n
-
-    replace(/<img src="(.*?)".*?(>.*?<\/img>|\/>)/gi, '$1'). // replace image links
-
-    replace(/<(?:.|\n)*?>/gm, ''). // strip html tags
-
-    //.replace(/\[link\] \[comments\]/g, '') // reddit [link] and [comments] at the end of post
-
-    replace(/&#32;/g, ' '). // space bug
-
-    replace(/  +/g, ' '). // dupe spaces
-    trim(). // remove leading and trailing whitespace
-
-    replace(/\[link\] \[comments\]/g, '') // reddit [link] and [comments] at the end of post
-
-    ;
-  }
-
-  page._description = stripTags(page.content);
-  %>
-
-  <meta name="description" content="<%= page._description %>" />
+  <% if (page.description){ %>
+  <meta name="description" content="<%= page.description %>" />
+  <% } else if (config.description){ %>
+  <meta name="description" content="<%= config.description %>" />
+  <% } else if (page.excerpt){ %>
+  <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>" />
+  <% } else if (page.content){ %>
+  <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>" />
+  <% } %>
 
   <% if (page.keywords){ %>
   <meta name="keywords" content="<%= page.keywords %>" />
