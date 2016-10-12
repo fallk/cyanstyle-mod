@@ -590,9 +590,10 @@ a:hover {
 
 
 /* Backgroud image */
-#bg {
+/*#bg {*/
+body {
   background-image: url("images/body.jpg");
-  background-color: #050a10;
+  background-color: #0B3758;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
