@@ -2183,3 +2183,15 @@ body {
 .hansen-wrap {
   margin-bottom: 6px;
 }
+/* headers in js.md */
+.hansen-header {
+  margin: 1.7rem 0 0 0 !important;
+}
+/* divs in js.md */
+.hansen-blok {
+  padding: 4px 0 0 0;
+}
+/* textboxes in js.md */
+.hansen-input {
+  width: 85px;
+}
