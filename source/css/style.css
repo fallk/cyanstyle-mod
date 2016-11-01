@@ -2195,7 +2195,7 @@ body {
 .hansen-input {
   width: 85px;
 }
-/**/
+/*js.md editor lint output*/
 #lint-output {
     padding: 4px;
     /*margin: 4px;*/
@@ -2209,7 +2209,24 @@ body {
     /*background-color: #78bbda80;
     outline: #0078FF99 dashed 1px;*/
 }
-
+/*noSidebar tag*/
 .site-content.wide {
   width: 100%;
+}
+/*ss64 back-to-top label*/
+#bl {
+    display: none !important;
+}
+/*ss64 inline code*/
+span.code {
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    font-family: "Source Code Pro", Consolas, Monaco, Lucida Console, monospace;
+}
+/* force word wrap in <pre> */
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
