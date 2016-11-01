@@ -2209,3 +2209,7 @@ body {
     /*background-color: #78bbda80;
     outline: #0078FF99 dashed 1px;*/
 }
+
+.site-content.wide {
+  width: 100%;
+}
