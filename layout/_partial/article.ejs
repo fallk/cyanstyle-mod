@@ -1,20 +1,6 @@
-<%   
-    var excerpt;
-    if (typeof page !== 'undefined') {
-        excerpt = (page.content || page.excerpt)
-    } else if (typeof post !== 'undefined') {
-        excerpt = (post.content || post.excerpt)
-    }
-    if (excerpt) {
-      excerpt = excerpt
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // remove <script>
-        .replace(/<style( type=\"text\/css\")?>[^]?<\/style>/g, ''); // remove <style>
-    }
-    
-  %>
 <article id="<%= post.layout %>-<%= post.slug %>" class="<%= post.layout %>-<%= post.slug %> post type-post status-publish format-standard hentry">
     <!--<%- partial('post/gallery') %>-->
-      
+
       <header class="entry-header">
         <% if (post.link || post.title){ %>
         <%- partial('post/title', {class_name: 'article-title'}) %>
@@ -30,8 +16,8 @@
       </header><!-- .entry-header -->
 
     <div class="entry-content">
-      <% if (excerpt && index){ %>
-        <%- excerpt %>
+      <% if (post.excerpt && index){ %>
+        <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
           <p class="article-more-link">
             <a href="<%- url_for(post.path) %>#more" class="more-link"><%= theme.excerpt_link %> <span class="meta-nav">→</span></a>
