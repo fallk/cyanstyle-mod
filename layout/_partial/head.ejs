@@ -3,14 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <% if (page.description){ %>
+  <%
+    const fs = require('fs');
+    var excerpt = fs.readFileSync((page || post).full_source, 'utf8');
+    if (excerpt) {
+      excerpt = excerpt
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // remove <script>
+        .replace(/<style( type=\"text\/css\")?>[^]?<\/style>/g, ''); // remove <style>
+    }
+    console.log('a');
+    
+    if (excerpt){ console.log('c'); %>
+  <meta name="description" content="<%= excerpt.replace(/^\s*/, '').replace(/\s*$/, '') %>" />
+  <% } else if (page.description) { %>
   <meta name="description" content="<%= page.description %>" />
   <% } else if (config.description){ %>
   <meta name="description" content="<%= config.description %>" />
-  <% } else if (page.excerpt){ %>
-  <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>" />
-  <% } else if (page.content){ %>
-  <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>" />
   <% } %>
 
   <% if (page.keywords){ %>
